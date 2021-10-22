@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+<<<<<<< HEAD
 {% block content%}
 <!DOCTYPE html>
 <html lang="en">
@@ -12,4 +13,35 @@
 
 </body>
 </html>
+=======
+{% block content %}
+
+<div class="container mt-3 mb-5">
+    <div class="row mt-5 mb-5 shadow">
+        <div class="col-lg-6 shadow p-4">
+            <h3>Register</h3>
+            <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+              </form> 
+        </div>
+        <div class="col-lg-2">
+          <img src="https://www.penpal.me/img/penpal_meta_image.png" style="width: 350%; height: 100%;">
+        </div>
+      </div>
+       
+</div>
+>>>>>>> 61169c6a0b4354b11597e961c624cf4a8dce8a99
 {% endblock %}
