@@ -12,10 +12,6 @@ def login(request):
     return render(request, 'login.html')
 
 
-def register(request):
-    return render(request, 'register.html')
-
-
 def pesan(request):
     if request.POST:
         pesan = request.POST['pesan']
