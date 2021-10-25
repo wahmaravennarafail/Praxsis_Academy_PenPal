@@ -12,11 +12,7 @@ def home(request):
 def login(request):
     return render(request, 'login.html')
 
-def profile(request):
-    if request.user.is_authenticated:
-        return render(request, 'profile.html')
-    else:
-        return redirect('/login/')
+
 def pesan(request):
     if request.POST:
         message = request.POST['message']
