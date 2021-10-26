@@ -10,8 +10,16 @@ def home(request):
 
 
 def login(request):
-    return render(request, 'login.html')
+    if request.POST:
+        input_email = request.POST['email']
+        input_password = request.POST['password']
 
+        user = models.login.objects.filter(email=input_email, password=input_password).first()
+        # print(user)
+        if user is not None :
+        
+            return redirect('/profil')
+    return render(request, 'login.html')
 
 def pesan(request):
     if request.POST:
@@ -25,3 +33,5 @@ def pesan(request):
     return render(request, 'home.html', {
         'data': data
     })
+def profil (request):
+    return render(request, 'profile.html')

@@ -5,4 +5,5 @@ urlpatterns = [
     path('', home, name="home"),
     path('login', login, name='login'),
     path('pesan', pesan, name='pesan'),
+    path('profil', profil, name ='profil')
 ]
