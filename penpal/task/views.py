@@ -1,3 +1,4 @@
+from typing import ContextManager
 from django.db import models
 from django.shortcuts import render, redirect
 from . import models
@@ -25,3 +26,24 @@ def pesan(request):
     return render(request, 'home.html', {
         'data': data
     })
+
+def profile(request):
+    if request.POST:
+        username = request.POST['username']
+        email = request.POST['email']
+        models.profile.objects.create(
+            username=username, email=email
+        )
+    data = models.profile.objects.all()
+    return render(request, 'home.html', {
+        'data': data
+    })
+
+# def user(request):
+#     if request.POST:
+
+def view_profile(request):
+    Context = {
+        'user' : request.user
+    }
+    return render(request,'profile.html', Context )
