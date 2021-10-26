@@ -2,26 +2,35 @@ from django.db import models
 from django.shortcuts import render, redirect
 from . import models
 
-# Create your views here.
+
+def login(request):
+    return render(request, 'task/login.html')
+
+# Untuk Halaman Home
 
 
 def home(request):
-    return render(request, 'home.html')
-
-
-def login(request):
-    return render(request, 'login.html')
-
-
-def pesan(request):
     if request.POST:
         message = request.POST['message']
         negara = request.POST['negara']
         initial = request.POST['initial']
         models.message.objects.create(
-            message=message, negara=negara, initial=initial
-        )
+            pesan=message, negara=negara, initial=initial)
     data = models.message.objects.all()
-    return render(request, 'home.html', {
+    # print("data")
+    return render(request, 'task/home.html', {
         'data': data
     })
+
+
+def detail(request, id):
+    data = models.message.objects.filter(pk=id).first()
+    print(data)
+    return render(request, 'task/detail.html', {
+        'detail_pesan': data
+    })
+
+
+def hapus(request, id):
+    models.message.objects.filter(pk=id).delete()
+    return redirect('/')
