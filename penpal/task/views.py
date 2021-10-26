@@ -5,10 +5,16 @@ from . import models
 
 
 def login(request):
+    if request.POST:
+        input_email = request.POST['email']
+        input_password = request.POST['password']
+
+        user = models.login.objects.filter(email=input_email, password=input_password).first()
+        # print(user)
+        if user is not None :
+        
+            return redirect('/profile')
     return render(request, 'task/login.html')
-
-# Untuk Halaman Home
-
 
 def home(request):
     if request.POST:
@@ -35,3 +41,6 @@ def detail(request, id):
 def hapus(request, id):
     models.message.objects.filter(pk=id).delete()
     return redirect('/')
+
+def profil (request):
+    return render(request, 'task/profile.html')
