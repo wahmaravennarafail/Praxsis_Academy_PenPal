@@ -13,8 +13,8 @@ def login(request):
         # print(user)
         if user is not None :
         
-            return redirect('task/profil')
-    return render(request, 'login.html')
+            return redirect('/profile')
+    return render(request, 'task/login.html')
 
 def home(request):
     if request.POST:
@@ -41,3 +41,6 @@ def detail(request, id):
 def hapus(request, id):
     models.message.objects.filter(pk=id).delete()
     return redirect('/')
+
+def profil (request):
+    return render(request, 'task/profile.html')
