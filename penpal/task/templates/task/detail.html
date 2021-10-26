@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Posts</h1>
+
+<div class="card">
+    <div class="card-header">
+      Featured
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">PenPal</h5>
+      <p class="card-text">{{detail_pesan.pesan}}</p>
+      <p class="card-text">(FROM) {{detail_pesan.negara}} -- (BY) {{detail_pesan.initial}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+
+{% endblock %}
