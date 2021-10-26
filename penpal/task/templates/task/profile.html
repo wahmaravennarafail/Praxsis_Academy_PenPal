@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<h2>{% block title %} profile {% endblock %} </h2>
+<p>username: {{ user }}</p>
+<p>email: {{ user.email }}</p>
+
+{% else %}
+
+<p>login to your details</p>
+
+{% endif %}
+{% endblock %}
