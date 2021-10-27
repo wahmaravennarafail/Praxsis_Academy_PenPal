@@ -19,21 +19,19 @@
       <div class="ms-3 mb-3 d-grid gap-2">
           <button type="submit" class="btn btn-primary">Submit</button>
       </div>
-      
   </form>
 </section>
 
 <section>
   {% for i in data %}
-  <div class="card border-primary mt-3 mx-lg-5">
-    <div class="card-body text-primary">
-      <h5 class="card-title">Pesan</h5>
+  <div class="card border-success mb-3" style="max-width: 18rem;">
+    <div class="card-header bg-transparent border-success">Initials: {{i.initial}}</div>
+    <div class="card-body text-success">
       <p class="card-text">{{i.pesan}}</p>
-      <a href="#" class="card-link">{{i.negara}}</a>
-      <a href="#" class="card-link">{{i.initial}}</a>
-      <a href="detail/{{i.id}}" class="stretched-link"></a>
-      <!-- <a href="hapus/{{i.id}}" class="btn btn-primary">Hapus</a> -->
     </div>
+    <div class="card-footer bg-transparent border-success">Country: {{i.negara}}</div>
+    <a href="detail/{{i.id}}" class="stretched-link"></a>
+  </div>
   </div>
   {% endfor %}
 </section>
