@@ -9,12 +9,16 @@ def login(request):
         input_email = request.POST['email']
         input_password = request.POST['password']
 
-        user = models.login.objects.filter(email=input_email, password=input_password).first()
+        user = models.login.objects.filter(
+            email=input_email, password=input_password).first()
         # print(user)
-        if user is not None :
-        
+        if user is not None:
+
             return redirect('/profile')
     return render(request, 'task/login.html')
+
+# Untuk Home
+
 
 def home(request):
     if request.POST:
@@ -42,5 +46,11 @@ def hapus(request, id):
     models.message.objects.filter(pk=id).delete()
     return redirect('/')
 
-def profil (request):
+# Untuk Profile
+
+
+def profil(request):
     return render(request, 'task/profile.html')
+
+# def profil(request):
+#     return render(request, 'task/profile.html')
