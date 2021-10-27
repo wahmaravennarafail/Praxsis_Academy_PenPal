@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
+
 <div class="container mt-3 mb-5">
     <div class="row mt-5 mb-5 shadow">
         <div class="col-lg-6 shadow p-4">
             <h3>Login</h3>
-            
+            <a type = "submit" class="btn btn-primary" href=" {% url 'home'%}">Kembali</a>
             <form action="" method="post">
               {%csrf_token%}
                 <div class="mb-3">
