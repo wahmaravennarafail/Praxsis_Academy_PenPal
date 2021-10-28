@@ -51,7 +51,4 @@ def hapus(request, id):
 
 def profil(request):
     data = models.message.objects.all()
-    return render(request, 'task/profile.html',{
-        'data': data
-        entry.objects.filter(pub_date__year=2006)
-    })
+    return render(request, 'task/profile.html',)

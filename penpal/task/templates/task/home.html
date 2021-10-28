@@ -22,17 +22,35 @@
 </section>
 
 <section>
-  {% for i in data %}
-  <div class="card border-success mb-3" style="max-width: 18rem;">
-    <div class="card-header bg-transparent border-success">Initials: {{i.initial}}</div>
-    <div class="card-body text-success">
+  <!-- <div class="card bg-light mb-3" style=" max-width: 18rem;">
+    <div class="card-header bg-transparent border-drak">Initials: {{i.initial}}</div>
+    <div class="card-body text-drak">
       <p class="card-text">{{i.pesan}}</p>
     </div>
-    <div class="card-footer bg-transparent border-success">Country: {{i.negara}}</div>
-    <a href="detail/{{i.id}}" class="btn btn-primary"></a>
-    <a href="hapus/{{i.id}}" class="btn btn-primary"></a>
+    <div class="card-footer bg-transparent border-drak">Country: {{i.negara}}</div>
+    
+    <div class="card-body">
+      <a href="detail/{{i.id}}" class="btn btn-primary">Detail</a>
+      <a href="hapus/{{i.id}}" class="btn btn-primary">Hapus</a>
+    </div>
+  </div> -->
+  
+  {% for i in data %}
+  <div class="card-group">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Initials: {{i.Initial}}</h5>
+        <p class="card-text">{{i.pesan}}</p>
+        <p class="card-text">Country: {{i.negara}}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+      <div class="card-body">
+        <a href="detail/{{i.id}}" class="btn btn-primary">Detail</a>
+        <a href="hapus/{{i.id}}" class="btn btn-danger">Hapus</a>
+      </div>
+    </div>
   </div>
-  </div>
+
   {% endfor %}
 </section>
 
