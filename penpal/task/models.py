@@ -14,10 +14,14 @@ class login(models.Model):
     password = models.IntegerField()
 
 
-class userProfile(models.Model):
-    user = models.OneToOneField(User, primary_key=True, verbose_name='user',
-                                related_name='profile', on_delete=models.CASCADE)
-    name = models.CharField(max_length=30, blank=True, null=True)
-    bio = models.TextField(max_length=500, blank=True, null=True)
-    birth_date = models.DateField(null=True, blank=True)
-    location = models.CharField(max_length=100, blank=True, null=True)
+class profilPost(models.Model):
+    posting = models.CharField(max_length=200)
+
+
+# class userProfile(models.Model):
+#     user = models.OneToOneField(User, primary_key=True, verbose_name='user',
+#                                 related_name='profile', on_delete=models.CASCADE)
+#     name = models.CharField(max_length=30, blank=True, null=True)
+#     bio = models.TextField(max_length=500, blank=True, null=True)
+#     birth_date = models.DateField(null=True, blank=True)
+#     location = models.CharField(max_length=100, blank=True, null=True)

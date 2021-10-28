@@ -21,27 +21,20 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item active">
-<<<<<<< HEAD
                 <a class="nav-link text-white" href="/">Home<span class="sr-only"></span><a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link text-white" href="{% url 'profil' %}">Profil<span class="sr-only"></span><a>
               </li>
-              <li class="nav-item active me-3 text-end">
-                <a class="nav-link btn btn-success text-white" href="{% url 'login' %}">
-                    Login</a>
+
+              {% if user.is_authenticated %}
+              <li class="nav-item active">
+                <a href="{% url 'logout'%}?next={{request.path}}">logout<span class="sr-only"></span><a>
+              {% else %}
+                <a href="{% url 'login'%}?next={{request.path}}">login<span class="sr-only"></span><a>
               </li>
-<!-- 
-=======
-                <a class="nav-link text-white" href="/">
-                            Home<span class="sr-only"></span><a>
-              <li class="nav-item active">
-                <a class="nav-link text-white" href="{% url 'login' %}">
-                            Login<span class="sr-only"></span><a>
-              <li class="nav-item active">
-                <a class="nav-link text-white" href="{% url 'home' %}">
-                            Tulis Pesan<span class="sr-only"></span><a>
->>>>>>> 476c31323dd3a02a2d098c6871074ef306746b88
+              {% endif %}
+
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Info
