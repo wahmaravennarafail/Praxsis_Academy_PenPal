@@ -1,37 +1,12 @@
-</div>
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-primary">
-  <div class="container">
-    <a class="navbar-brand text-white" href="#">Wahma Ravenna Rafail</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link text-white" href="/">
-            Home<span class="sr-only"></span><a>
-        <li class="nav-item active">
-          <a class="nav-link text-white" href="{% url 'login' %}">
-            About<span class="sr-only"></span><a>
-        <li class="nav-item active">
-          <a class="nav-link text-white" href="{% url 'home' %}">
-            Portofolio<span class="sr-only"></span><a>
-        <li class="nav-item">
-          
-        </li>
-      </ul>
 
-    </div>
-  </div>
-</nav>
-
+{% extends "base.html" %}
 
 
 {% block content %}
-{% endblock %}
 <!DOCTYPE html>
+
 <html lang="en">
-  <head>
+<head>
     <title>Bootstrap</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,7 +21,9 @@
     <div class="container text-center">
       <div class="jumbotron">
           <img src="https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png" width="200" class="rounded-circle">
-        <h1>Wahma Ravenna Rafail</h1>      
+          {% if user.is_authenticated %}
+          <h1>Selamat datang {{ user.get_username }}</li>    
+          {% endif %} </h1>      
         <p>Ini adadalah teks yang masuk dalam tag div dengan class jumbotron.
         Di dalam ini kita dapat memasukkan berbagai macam tag html
         </p>
@@ -112,15 +89,13 @@
             <p class="card-text">{{i.pesan}}</p>
           </div>
           <div class="card-footer bg-transparent border-success">Country: {{i.negara}}</div>
-          <a href="detail/{{i.id}}" class="btn btn-primary"></a>
-          <a href="hapus/{{i.id}}" class="btn btn-primary"></a>
+            <a href="detail/{{i.id}}" class="btn btn-primary"></a>
+            <a href="hapus/{{i.id}}" class="btn btn-primary"></a>
+          </div>
         </div>
-        </div>
-        {% endfor %}
-      </section>
-    </div>
-
-
+    </div>   
+</section>
 
   </body>
 </html>
+

@@ -11,38 +11,56 @@
     <title>PENPAL</title>
     
 </div>
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <div class="container">
-    <a class="navbar-brand text-white" href="#">PenPal</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link text-white" href="/">
-            Home<span class="sr-only"></span><a>
-        <li class="nav-item active">
-          <a class="nav-link text-white" href="{% url 'login' %}">
-            Login<span class="sr-only"></span><a>
-        <li class="nav-item active">
-          <a class="nav-link text-white" href="{% url 'home' %}">
-            Tulis Pesan<span class="sr-only"></span><a>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Info
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Talk to Someone Now</a></li>
-            <li><a class="dropdown-item" href="#">find Yours</a></li>
-            <li><hr class="dropdown-divider"></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          
-        </li>
-      </ul>
+    <nav class=" warna_baru navbar navbar-expand-lg navbar-light bg-dark shadow ">
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <div class="container">
+          <a class="navbar-brand text-white" href="#">PenPal</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link text-white" href="/">Home<span class="sr-only"></span><a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link text-white" href="{% url 'profil' %}">Profil<span class="sr-only"></span><a>
+              </li>
+<<<<<<< HEAD
+              <li class="nav-item active me-3 text-end">
+                <a class="nav-link btn btn-white text-white" href="{% url 'login' %}">
+                    Login</a>
+=======
+
+              {% if user.is_authenticated %}
+              <li class="nav-item active">
+                <a href="{% url 'logout'%}?next={{request.path}}">logout<span class="sr-only"></span><a>
+              {% else %}
+                <a href="{% url 'login'%}?next={{request.path}}">login<span class="sr-only"></span><a>
+              </li>
+              {% endif %}
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Info
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Talk to Someone Now</a></li>
+                  <li><a class="dropdown-item" href="#">find Yours</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+               -->
+              <li class="nav-item">
+                
+>>>>>>> 9f7d8dbb89207b8968e6b437794b3eeaf9b1416a
+              </li>
+            </ul>
+=======
+>>>>>>> 735f24a250439b82ed123a6c62bb360d6fc71e22
     </div>
   </div>
 </nav>
