@@ -1,73 +1,12 @@
-<<<<<<< HEAD
+
 {% extends "base.html" %}
-
-
 {% block content %}
-from PIL import Image
-=======
-</div>
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-primary">
-  <div class="container">
-    <a class="navbar-brand text-white" href="#">Wahma Ravenna Rafail</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link text-white" href="/">
-            Home<span class="sr-only"></span><a>
-        <li class="nav-item active">
-          <a class="nav-link text-white" href="{% url 'login' %}">
-            About<span class="sr-only"></span><a>
-        <li class="nav-item active">
-          <a class="nav-link text-white" href="{% url 'home' %}">
-            Portofolio<span class="sr-only"></span><a>
-        <li class="nav-item">
-          
-        </li>
-      </ul>
-
-    </div>
-  </div>
-</nav>
 
 
-
-{% block content %}
-{% endblock %}
->>>>>>> 9f7d8dbb89207b8968e6b437794b3eeaf9b1416a
 <!DOCTYPE html>
 
 <html lang="en">
-<<<<<<< HEAD
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<<<<<<< HEAD
-    <div>
-        <img src="#" alt="#">
-    </div>
-    <div class="form-group">
-            <h1> muhammad rizal venayas</h1>
-            <p>designer</p>
-            <a href="">contact</a>
-            <a href="">resume</a>
-        </div>
-        <div>
-            <p>age</p>
-            <p>17</p>
-=======
-    {% if user.is_authenticated %}
-    <h1>Hallo {{ user.get_username }}</li>    
-    {% endif %} </h1>
-</body>
-{% endblock %}
-=======
+
   <head>
     <title>Bootstrap</title>
     <meta charset="utf-8">
@@ -96,49 +35,12 @@ from PIL import Image
           <div class="card-footer bg-transparent border-success">Country: {{i.negara}}</div>
           <a href="detail/{{i.id}}" class="btn btn-primary"></a>
           <a href="hapus/{{i.id}}" class="btn btn-primary"></a>
->>>>>>> 9f7d8dbb89207b8968e6b437794b3eeaf9b1416a
-        </div>
-        </div>
-<<<<<<< HEAD
-        <div>
-            <p>email</p>
-            <p>riveyas@gmail.com</p>
-        </div>
-    </div>   
-</section>
-<section>
-    <form method="#" action="#">
-        <div>
-            <label>nama</label>
-            <input type="text" name="name" placeholder="masukan nama anda">
-           
-        </div>
-        <div>
-            <label>age</label>
-            <input type="number" name="age" placeholder="masukan umur anda">
-        </div>
-        <div>
-            <label>location</label>
-            <input type="text" name="location" placeholder="lokasi anda">
-        </div>
-        <div>
-            <label>email</label>
-            <input type="text" name="email" placeholder="masukan email anda">
-        </div>
-        <div>
-            <input type="submit" name="submit" value="submit">
-        </div>
 
-    </form>
-</section>
-
-</body>
-{% endblock %}
-=======
+        </div>
+        </div>
         {% endfor %}
       </section>
     </div> 
   </body>
 </html>
->>>>>>> e4f02f6f9003707df302f735dbf915dbbea995f1
->>>>>>> 9f7d8dbb89207b8968e6b437794b3eeaf9b1416a
+{% endblock %}
