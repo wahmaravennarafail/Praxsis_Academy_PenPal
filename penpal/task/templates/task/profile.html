@@ -14,44 +14,123 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+.body{
+        background: #EFF7FE;
+      padding-top: 0px;
+}
+.main-section{
+    border:1px solid #0d0d0e;
+    background-color: #fff;
+}
+.profile-header{
+    background-color: #191b1b;
+    height:400px;
+    margin-inline-start: auto;
+}
+.user-detail{
+    margin:-50px 0px 30px 0px;
+}
+.user-detail img{
+    height:100px;
+    width:100px;
+}
+.user-detail h5{
+    margin:15px 0px 5px 0px;
+}
+.user-social-detail{
+    padding:15px 0px;
+    background-color: #161b1b;
+}
+.user-social-detail a i{
+    color:#fff;
+    font-size:23px;
+    padding: 0px 5px;
+}
+  </style>
   </head>
+  
   <body>
-    
+    <!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="custom.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="">
+        <!-- offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center -->
+          <div class="row">
+              <div class=" profile-header"></div>
+          </div>
+          <div class="row user-detail">
+              <div class="col-lg-12 col-sm-12 col-12">
+                  <img src="img.png" class="rounded-circle img-thumbnail">
+                  {% if user.is_authenticated %}
+                  <h5> {{ user.get_username }}</h5>  
+                  {% else %}
+                  <p>Silakan <a href="{% url 'login'%}?next={{request.path}}">Login</a></p>
+                  {% endif %} 
+                  <p><i class="fa fa-map-marker" aria-hidden="true"></i> lokasi</p>
 
-    <div class="container text-center">
-      <div class="jumbotron">
-          <img src="https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png" width="200" class="rounded-circle">
-          {% if user.is_authenticated %}
-          <h1>Selamat datang {{ user.get_username }}</li>    
-          {% endif %} </h1>      
-        <p>Ini adadalah teks yang masuk dalam tag div dengan class jumbotron.
-        Di dalam ini kita dapat memasukkan berbagai macam tag html
-        </p>
+                  <hr>
+                  <a href="#" class="btn btn-success btn-sm">Follow</a>
+                  <a href="#" class="btn btn-info btn-sm">Send Messege</a>
+
+                  <hr>
+                  <span>Seorang manusia yang hilang ditelan gemerlap malam dan mencintai dunia teknologi.</span>
+              </div>
+          </div>
+          <div class="row user-social-detail">
+              <div class="col-lg-12 col-sm-12 col-12">
+                  <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              </div>
+          </div>
       </div>
     </div>
-      <div class="container text-center">
-        <div class="row">
-            <div class="col text-center">
-                <h1>About</h1>
-            </div>
+  </div>
+  <div>
+    <form>
+      
+      <div class="mb-3">
+      </div>
+        <div class="mb-3">
+          <label for="disabledTextInput" class="form-label">masukan  email</label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="masukan email baru">
         </div>
-      </div>  
-      <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus inventore nisi quis ex magnam, harum eius error quasi quod. Praesentium dicta rerum ad maxime vitae quas error quae nemo provident?</p>
-            </div>
-            <div class="col text-center">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus inventore nisi quis ex magnam, harum eius error quasi quod. Praesentium dicta rerum ad maxime vitae quas error quae nemo provident?</p>
-            </div>
+        <div class="mb-3">
+          <label for="disabledTextInput" class="form-label">masukan nama</label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="nama">
         </div>
-     </div>
+        <div class="mb-3">
+          <label for="disabledSelect" class="form-label"></label>
+          <select id="disabledSelect" class="form-select" aria-placeholder="#">
+            <option>location</option>
+            <option>indonesia</option>
+            <option>malaysia</option>
+            <option>francis</option>
+            <option>zimbabwe</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  <div class="form-check">
+    <fieldset disabled>
+      <button type="submit" class="btn btn-primary">edit profil</button>
+    <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+   
+</div>
+</body>
+</html>
+    
      <div class="container text-center">
-        <div class="row">
-            <div class="col text-center">
-                <h1>Portofolio</h1>
-            </div>
-        </div>
+        
         <div class="row">
             <div class="col">
                 <div class="card" style="max-width: 18rem;">
@@ -74,8 +153,8 @@
                 <div class="card-body">
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
-              </div>
-        </div>
+              </div> 
+             </div>
         </div>
       <section>
 
