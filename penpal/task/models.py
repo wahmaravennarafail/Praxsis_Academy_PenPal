@@ -14,13 +14,6 @@ class login(models.Model):
     password = models.IntegerField()
 
 
-<<<<<<< HEAD
-=======
-class profilPost(models.Model):
-    posting = models.CharField(max_length=200)
-
-
->>>>>>> 9f7d8dbb89207b8968e6b437794b3eeaf9b1416a
 # class userProfile(models.Model):
 #     user = models.OneToOneField(User, primary_key=True, verbose_name='user',
 #                                 related_name='profile', on_delete=models.CASCADE)

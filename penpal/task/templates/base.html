@@ -13,9 +13,6 @@
 </div>
     <nav class=" warna_baru navbar navbar-expand-lg navbar-light bg-dark shadow ">
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
         <div class="container">
           <a class="navbar-brand text-white" href="#">PenPal</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,17 +26,12 @@
               <li class="nav-item active">
                 <a class="nav-link text-white" href="{% url 'profil' %}">Profil<span class="sr-only"></span><a>
               </li>
-<<<<<<< HEAD
-              <li class="nav-item active me-3 text-end">
-                <a class="nav-link btn btn-white text-white" href="{% url 'login' %}">
-                    Login</a>
-=======
 
               {% if user.is_authenticated %}
               <li class="nav-item active">
-                <a href="{% url 'logout'%}?next={{request.path}}">logout<span class="sr-only"></span><a>
+                <a class="nav-link text-white" href="{% url 'logout'%}?next={{request.path}}">logout<span class="sr-only"></span><a>
               {% else %}
-                <a href="{% url 'login'%}?next={{request.path}}">login<span class="sr-only"></span><a>
+                <a class="nav-link text-white" href="{% url 'login'%}?next={{request.path}}">login<span class="sr-only"></span><a>
               </li>
               {% endif %}
 
@@ -53,14 +45,10 @@
                   <li><hr class="dropdown-divider"></li>
                 </ul>
               </li>
-               -->
               <li class="nav-item">
                 
->>>>>>> 9f7d8dbb89207b8968e6b437794b3eeaf9b1416a
               </li>
             </ul>
-=======
->>>>>>> 735f24a250439b82ed123a6c62bb360d6fc71e22
     </div>
   </div>
 </nav>
